@@ -6,14 +6,11 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
-
 import java.io.IOException;
 
-public class GetPokemonInfos {
-    public static String getInfos(String pokemonId) {
+public class GetPokemonInfos implements PokemonserviceInterface{
+
+    public String getInfos(String pokemonId) {
         String jsonResponse = "";
         try {
 
@@ -22,7 +19,6 @@ public class GetPokemonInfos {
             request.addHeader("content-type", "application/json");
             HttpResponse result = httpClient.execute(request);
             jsonResponse = EntityUtils.toString(result.getEntity(), "UTF-8");
-
 
         } catch (IOException e) {
             e.printStackTrace();

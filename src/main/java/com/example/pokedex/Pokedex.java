@@ -3,7 +3,6 @@ package com.example.pokedex;
 
 import controllers.PokemonController;
 import models.Pokemon;
-import services.GetPokemonInfos;
 import views.ViewPokemon;
 
 public class Pokedex {
@@ -13,8 +12,7 @@ public class Pokedex {
         if (args.length > 0) {
             System.out.println("Vous avez fourni l'argument " + args[0]);
         }
-        String response = GetPokemonInfos.getInfos(args[0]);
-        Pokemon pokemon =  PokemonController.parseJson(response);
+        Pokemon pokemon =  PokemonController.parseJson(args[0]);
         ViewPokemon.ViewPokemonInfos(pokemon);
 
     }
