@@ -14,7 +14,7 @@ import java.util.Hashtable;
 
 public class PokemonService implements PokemonserviceInterface{
 
-    public Hashtable<String, String> getInfos(String pokemonId) {
+    public Hashtable<String, String> getPokemonInfos(String pokemonId) {
         Hashtable<String, String> pokemonInfos
                 = new Hashtable<String, String>();
         String jsonResponse = "";
@@ -44,4 +44,5 @@ public class PokemonService implements PokemonserviceInterface{
             return null;
         }
     }
+
 }

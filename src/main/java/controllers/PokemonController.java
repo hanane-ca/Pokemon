@@ -11,7 +11,7 @@ import java.util.Hashtable;
 
 public class PokemonController {
     public static Pokemon renderData(String pokemonId, PokemonserviceInterface pokemonService){
-        Hashtable<String, String> pokemonInfos =pokemonService.getInfos(pokemonId);
+        Hashtable<String, String> pokemonInfos =pokemonService.getPokemonInfos(pokemonId);
         if (pokemonInfos.containsKey("description")) {
             PokemonSql pokemon = new PokemonSql();
             pokemon.setId(pokemonId);

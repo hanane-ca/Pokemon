@@ -25,6 +25,12 @@ public class Pokedex {
 
         PokemonController pokemonController=new PokemonController();
         Pokemon pokemon=pokemonController.renderData(args[0],pokemonService);
-        ViewPokemon.ViewPokemonInfos(pokemon);
+        ViewPokemon view = new ViewPokemon(pokemon);
+        System.out.println(view.generateText());
+        System.out.println(view.generateHtml());
+    }
+
+    public String getName(){
+        return "Hello";
     }
 }

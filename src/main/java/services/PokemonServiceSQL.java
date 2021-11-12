@@ -12,7 +12,7 @@ public class PokemonServiceSQL implements PokemonserviceInterface{
         this.sqlFile = sqlFile;
     }
     @Override
-    public Hashtable<String, String> getInfos(String pokemonId) {
+    public Hashtable<String, String> getPokemonInfos(String pokemonId) {
         Hashtable<String, String> pokemonInfos
                 = new Hashtable<String, String>();
         /* Connect to the database */
