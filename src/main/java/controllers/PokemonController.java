@@ -11,7 +11,11 @@ import java.util.Hashtable;
 
 public class PokemonController {
     public static Pokemon renderData(String pokemonId, PokemonserviceInterface pokemonService){
+        //we will use a hashTable where the name of the attributes are the keys and the data is the values
         Hashtable<String, String> pokemonInfos =pokemonService.getPokemonInfos(pokemonId);
+        //Check if we use the api or local data in other words check if we have the description arg or not
+        //So we can use the appropriate module
+        //Also the controller doesn't depend on the implementation because we treat each case in here
         if (pokemonInfos.containsKey("description")) {
             PokemonSql pokemon = new PokemonSql();
             pokemon.setId(pokemonId);

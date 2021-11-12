@@ -19,16 +19,19 @@ public class PokemonService implements PokemonserviceInterface{
                 = new Hashtable<String, String>();
         String jsonResponse = "";
         try {
+            //get data from api
             CloseableHttpClient httpClient = HttpClientBuilder.create().build();
             HttpGet request = new HttpGet(String.format("https://pokeapi.co/api/v2/pokemon/%s",pokemonId));
             request.addHeader("content-type", "application/json");
             HttpResponse result = httpClient.execute(request);
             jsonResponse = EntityUtils.toString(result.getEntity(), "UTF-8");
 
+            //parse data retreived
             JSONParser parser = new JSONParser();
             Object resultObject = parser.parse(jsonResponse);
             if (resultObject instanceof JSONObject) {
                 JSONObject obj =(JSONObject)resultObject;
+                //fill the hashTable with the values from the json response
                 pokemonInfos.put("id",obj.get("id").toString());
                 pokemonInfos.put("name",obj.get("name").toString());
                 pokemonInfos.put("height",obj.get("height").toString());

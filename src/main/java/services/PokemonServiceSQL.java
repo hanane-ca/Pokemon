@@ -28,6 +28,7 @@ public class PokemonServiceSQL implements PokemonserviceInterface{
             stmt.setString(1,pokemonId);
             ResultSet rs    = stmt.executeQuery();
             rs.next();
+            //fill the hashTable with the values from the response
             pokemonInfos.put("id",pokemonId);
             pokemonInfos.put("name",rs.getString("name"));
             pokemonInfos.put("height",rs.getString("height"));

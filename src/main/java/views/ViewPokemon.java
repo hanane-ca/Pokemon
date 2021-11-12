@@ -13,6 +13,7 @@ public class ViewPokemon implements ConsoleTextGeneratorInterface, HtmlGenerator
         this.pokemon = pokemon;
     }
 
+    //function returns the text format of the data retrieved from the api or the local data
     @Override
     public String generateText() {
         String consoleText = "=============================\n" +
@@ -27,6 +28,7 @@ public class ViewPokemon implements ConsoleTextGeneratorInterface, HtmlGenerator
         return consoleText;
     }
 
+    //function returns the html format of the data retrieved from the api or the local data
     @Override
     public String generateHtml() {
         String html ="<h1>"+pokemon.getName()+"</h1>\n" +

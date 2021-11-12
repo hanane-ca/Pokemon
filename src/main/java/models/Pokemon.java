@@ -16,6 +16,8 @@ public class Pokemon {
         this.weight = weight;
     }
 
+    //getters and setters
+
     public String getId() {
         return id;
     }
