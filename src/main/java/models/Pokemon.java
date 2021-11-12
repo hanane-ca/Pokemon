@@ -7,6 +7,8 @@ public class Pokemon {
     private String height;
     private String weight;
 
+    public Pokemon(){}
+
     public Pokemon(String id, String name, String height, String weight) {
         this.id = id;
         this.name = name;

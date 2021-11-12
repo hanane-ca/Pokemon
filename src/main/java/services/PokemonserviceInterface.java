@@ -1,5 +1,7 @@
 package services;
 
+import java.util.Hashtable;
+
 public interface PokemonserviceInterface {
-    public String getInfos(String pokemonId);
+    public Hashtable<String, String> getInfos(String pokemonId);
 }
